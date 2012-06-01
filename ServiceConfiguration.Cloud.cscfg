@@ -1,0 +1,29 @@
+<ServiceConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" serviceName="sdaviesnodeservice" osFamily="2" osVersion="*" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration">
+  <Role name="NodeWeb">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="Simon" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCECZmgSKMGzqTRcQ9+HrnrhYwDQYJKoZIhvcNAQEBBQAEggEAT+WDMbuPhffZ8SnsmpCAogHwqLeD1USNzDOH2B48teQ9xoAEF6GLKrpNpBCQFIDTQHY4pq68EtGvChk5XqOj6qylt4SI1DLxUhAVDCVwVf/EAwXHHenia53Mv/r83GXnD/cpRESQ718ekTG0/zfHaUJ/4GbvUntQIdGX1EhrvTK1r5QBAKLQt1QGUKADKdCQb6PIuQqjIPghyjataOataf73ScUfa0wbK4cAdyoop51LOCeEAADKZnbawSiVgQYylPRLqowJodT41d0pjQkSwxLG0vlJQsV9ZA612IN4D1rFzhdaiLjV53uwTEoSpoNGGNBzA2CdhFYyYGLg1r1+0DAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECO+soi/bCDQxgBDJ9oh0ElblDVVLPd7jBbae" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2013-05-24T23:59:59.0000000+01:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="39280D6597B52350D4810EBE7AC4468107E3C67F" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+  <Role name="Cache">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="Simon" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCECZmgSKMGzqTRcQ9+HrnrhYwDQYJKoZIhvcNAQEBBQAEggEAT+WDMbuPhffZ8SnsmpCAogHwqLeD1USNzDOH2B48teQ9xoAEF6GLKrpNpBCQFIDTQHY4pq68EtGvChk5XqOj6qylt4SI1DLxUhAVDCVwVf/EAwXHHenia53Mv/r83GXnD/cpRESQ718ekTG0/zfHaUJ/4GbvUntQIdGX1EhrvTK1r5QBAKLQt1QGUKADKdCQb6PIuQqjIPghyjataOataf73ScUfa0wbK4cAdyoop51LOCeEAADKZnbawSiVgQYylPRLqowJodT41d0pjQkSwxLG0vlJQsV9ZA612IN4D1rFzhdaiLjV53uwTEoSpoNGGNBzA2CdhFYyYGLg1r1+0DAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECO+soi/bCDQxgBDJ9oh0ElblDVVLPd7jBbae" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2013-05-24T23:59:59.0000000+01:00" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="39280D6597B52350D4810EBE7AC4468107E3C67F" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

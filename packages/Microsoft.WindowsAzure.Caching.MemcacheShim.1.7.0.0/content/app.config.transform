@@ -1,0 +1,14 @@
+﻿<configuration>
+	<configSections>
+		<section name="dataCacheClients" type="Microsoft.ApplicationServer.Caching.DataCacheClientsSection, Microsoft.ApplicationServer.Caching.Core" allowLocation="true" allowDefinition="Everywhere"/>
+	</configSections>
+	<dataCacheClients>
+		<tracing sinkType="DiagnosticSink" traceLevel="Error"/>
+		<!-- This is the default config which is used for all Named Caches
+		     This can be overriden by specifying other dataCacheClient sections with name being the NamedCache name -->
+		<dataCacheClient name="DefaultShimConfig" useLegacyProtocol="false">
+			<autoDiscover isEnabled="true" identifier="[server role name goes here]"/>
+			<!--<localCache isEnabled="true" sync="TimeoutBased" objectCount="100000" ttlValue="300" />-->
+		</dataCacheClient>
+	</dataCacheClients>
+</configuration>
