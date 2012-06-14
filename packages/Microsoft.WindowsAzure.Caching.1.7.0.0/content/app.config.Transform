@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+	<configSections>
+		<!-- Append below entry to configSections. Do not overwrite the full section. -->
+		<section name="dataCacheClients" type="Microsoft.ApplicationServer.Caching.DataCacheClientsSection, Microsoft.ApplicationServer.Caching.Core" allowLocation="true" allowDefinition="Everywhere"/>
+	</configSections>
+
+	<dataCacheClients>
+		<tracing sinkType="DiagnosticSink" traceLevel="Error"/>
+		<dataCacheClient name ="default">
+			<autoDiscover isEnabled="true" identifier="[cache cluster role name]"/>
+			<!--<localCache isEnabled="true" sync="TimeoutBased" objectCount="100000" ttlValue="300" />-->
+		</dataCacheClient>
+	</dataCacheClients>
+
+</configuration>

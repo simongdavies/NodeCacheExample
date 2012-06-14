@@ -1,0 +1,17 @@
+Server has started.
+Request for / received.
+About to route a request for /
+Connected to the localhost memcache on port 11211!
+Request for /add received.
+Received POST data chunk 'key=1&value=a'.
+About to route a request for /add
+Request for /additem received.
+About to route a request for /additem
+Request for /add received.
+Received POST data chunk 'key=2&value=b'.
+About to route a request for /add
+Request for /additem received.
+About to route a request for /additem
+Request for /add received.
+Received POST data chunk 'key=3&value=c'.
+About to route a request for /add

@@ -14,6 +14,10 @@
     <AssemblyName>NodeWeb</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,15 +38,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <Private>False</Private>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.7.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.1.7.0.0\lib\net35-full\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Providers">
       <HintPath>..\packages\System.Web.Providers.1.0.1\lib\Net40\System.Web.Providers.dll</HintPath>
@@ -62,10 +70,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
-    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="packages.config" />
+    <Content Include="node_modules\mc\.npmignore" />
+    <Content Include="node_modules\mc\LICENSE" />
+    <Content Include="node_modules\mc\Makefile" />
+    <None Include="node_modules\mc\node_modules\connman\.idea\.name" />
+    <Content Include="node_modules\mc\node_modules\connman\LICENSE" />
+    <Content Include="node_modules\mc\node_modules\connman\package.json" />
+    <Content Include="node_modules\mc\node_modules\connman\README.md" />
+    <None Include="node_modules\mc\node_modules\connman\test\runTest.sh" />
+    <Content Include="node_modules\mc\package.json" />
+    <Content Include="node_modules\mc\README.md" />
     <None Include="WindowsAzure.Caching.MemcacheShim\AzureMemcacheService.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -78,33 +92,6 @@
     <None Include="WindowsAzure.Caching.MemcacheShim\MemcacheShimInstaller.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="WindowsAzure.Caching.MemcacheShim\MemcacheShimInstaller.exe.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="WindowsAzure.Caching.MemcacheShim\MemcacheShimEmulator.exe.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="WindowsAzure.Caching.MemcacheShim\CacheDumpGenerator.exe.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="WindowsAzure.Caching.MemcacheShim\AzureMemcacheService.exe.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\node.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\vcredist_x64.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="obj\Debug\NodeWeb.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\NodeWeb.dll" />
-    <Content Include="obj\Debug\NodeWeb.pdb" />
-    <Content Include="obj\Release\NodeWeb.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Release\NodeWeb.dll" />
-    <Content Include="obj\Release\NodeWeb.pdb" />
-    <Content Include="server.js" />
     <None Include="WindowsAzure.Caching.MemcacheShim\Microsoft.ApplicationServer.Caching.AzureClientHelper.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -135,6 +122,40 @@
     <None Include="WindowsAzure.Caching.MemcacheShim\Microsoft.WindowsFabric.Data.Common.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="Index.js" />
+    <Content Include="node_modules\mc\lib\conn.js" />
+    <Content Include="node_modules\mc\lib\memcache-client.js" />
+    <Content Include="node_modules\mc\lib\queue.js" />
+    <Content Include="node_modules\mc\node_modules\connman\docs\connman.html" />
+    <Content Include="node_modules\mc\node_modules\connman\docs\docco.css" />
+    <Content Include="node_modules\mc\node_modules\connman\lib\connman.js" />
+    <Content Include="node_modules\mc\node_modules\connman\test\esrv.js" />
+    <Content Include="node_modules\mc\node_modules\connman\test\tcho.js" />
+    <Content Include="node_modules\mc\test\integration\flaky-network.js" />
+    <Content Include="node_modules\mc\test\simulation\runlong.js" />
+    <Content Include="node_modules\mc\test\unit\conn.js" />
+    <Content Include="node_modules\mc\test\unit\memcache-client.js" />
+    <Content Include="node_modules\mc\test\unit\queue.js" />
+    <Content Include="packages.config" />
+    <None Include="WindowsAzure.Caching.MemcacheShim\MemcacheShimInstaller.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="WindowsAzure.Caching.MemcacheShim\MemcacheShimEmulator.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="WindowsAzure.Caching.MemcacheShim\CacheDumpGenerator.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="WindowsAzure.Caching.MemcacheShim\AzureMemcacheService.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\node.exe" />
+    <Content Include="bin\vcredist_x64.exe" />
+    <Content Include="requestHandlers.js" />
+    <Content Include="router.js" />
+    <Content Include="server.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.cloud.config" />
@@ -143,31 +164,21 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\iisnode.msi">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="bin\setup_web.cmd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="bin\iisnode.msi" />
+    <Content Include="bin\setup_web.cmd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="obj\Release\TempPE\" />
-    <Folder Include="obj\Release\TransformWebConfig\original\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>47273</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/NodeWeb</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

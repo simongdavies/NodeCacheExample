@@ -1,13 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "NodeTest", "NodeTest.ccproj", "{9C253AE1-5FB9-4EF9-A67D-F73F4086C94C}"
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "NodeCache", "NodeCache.ccproj", "{9C253AE1-5FB9-4EF9-A67D-F73F4086C94C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeWeb", "NodeWeb\NodeWeb.csproj", "{6A4E16D0-255B-4BA7-BBFE-0E7CE9ACDB2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cache", "Cache\Cache.csproj", "{4BC923B3-8CBA-49EA-84F2-7A99C91A52CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cache", "Cache\Cache.csproj", "{D1B3AD2A-2DFF-4818-BA97-DBE2455391DB}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sdavies.tfspreview.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Cache\\Cache.csproj
+		SccProjectName1 = Cache
+		SccLocalPath1 = Cache
+		SccProjectUniqueName2 = NodeTest.ccproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = NodeWeb\\NodeWeb.csproj
+		SccProjectName3 = NodeWeb
+		SccLocalPath3 = NodeWeb
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -21,10 +35,10 @@ Global
 		{6A4E16D0-255B-4BA7-BBFE-0E7CE9ACDB2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A4E16D0-255B-4BA7-BBFE-0E7CE9ACDB2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A4E16D0-255B-4BA7-BBFE-0E7CE9ACDB2E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4BC923B3-8CBA-49EA-84F2-7A99C91A52CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BC923B3-8CBA-49EA-84F2-7A99C91A52CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BC923B3-8CBA-49EA-84F2-7A99C91A52CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BC923B3-8CBA-49EA-84F2-7A99C91A52CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1B3AD2A-2DFF-4818-BA97-DBE2455391DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1B3AD2A-2DFF-4818-BA97-DBE2455391DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1B3AD2A-2DFF-4818-BA97-DBE2455391DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1B3AD2A-2DFF-4818-BA97-DBE2455391DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

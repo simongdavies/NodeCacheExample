@@ -1,4 +1,5 @@
-<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="sdaviesnodeservice" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="nodecacheservice" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2012-05.1.7">
   <WebRole name="NodeWeb" vmsize="Small">
     <Sites>
       <Site name="Web">
@@ -12,14 +13,26 @@
     <InternalEndpoint name="memcache_default" protocol="tcp" port="11211" /></Endpoints>
     <Imports>
       <Import moduleName="Diagnostics" />
-      <Import moduleName="RemoteAccess" />
-      <Import moduleName="RemoteForwarder" />
     </Imports>
-  <Startup priority="-2"><Task commandLine="WindowsAzure.Caching.MemcacheShim\MemcacheShimInstaller.exe" executionContext="elevated" taskType="simple" /></Startup></WebRole>
+    <Startup priority="-2">
+      <Task commandLine="WindowsAzure.Caching.MemcacheShim\MemcacheShimInstaller.exe" executionContext="elevated" taskType="simple" />
+      <Task commandLine="setup_web.cmd &gt; log.txt" executionContext="elevated" >
+        <Environment>
+          <Variable name="EMULATED">
+            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+          </Variable>
+        </Environment>
+      </Task>
+
+    </Startup>
+  </WebRole>
   <WorkerRole name="Cache" vmsize="Small">
     <Imports>
       <Import moduleName="Diagnostics" />
-      <Import moduleName="RemoteAccess" />
+      <Import moduleName="Caching" />
     </Imports>
+    <LocalResources>
+      <LocalStorage name="Microsoft.WindowsAzure.Plugins.Caching.FileStore" sizeInMB="1000" cleanOnRoleRecycle="false" />
+    </LocalResources>
   </WorkerRole>
 </ServiceDefinition>

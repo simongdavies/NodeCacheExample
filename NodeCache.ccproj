@@ -4,14 +4,19 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>1.6</ProductVersion>
+    <ProductVersion>1.7</ProductVersion>
     <ProjectGuid>{9c253ae1-5fb9-4ef9-a67d-f73f4086c94c}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NodeTest</RootNamespace>
     <AssemblyName>NodeTest</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
-    <Name>NodeTest</Name>
+    <Name>NodeCache</Name>
+    <UseIISExpressByDefault>False</UseIISExpressByDefault>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,7 +44,7 @@
   <ItemGroup>
     <ProjectReference Include="Cache\Cache.csproj">
       <Name>Cache</Name>
-      <Project>{4bc923b3-8cba-49ea-84f2-7a99c91a52cc}</Project>
+      <Project>{d1b3ad2a-2dff-4818-ba97-dbe2455391db}</Project>
       <Private>True</Private>
       <RoleType>Worker</RoleType>
       <RoleName>Cache</RoleName>
@@ -57,13 +62,10 @@
   <ItemGroup>
     <Folder Include="Profiles" />
   </ItemGroup>
-  <ItemGroup>
-    <PublishProfile Include="Profiles\sdnodetestProduction.azurePubxml" />
-  </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
-    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\1.6\</CloudExtensionsDir>
+    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\1.7\</CloudExtensionsDir>
   </PropertyGroup>
   <Import Project="$(CloudExtensionsDir)Microsoft.WindowsAzure.targets" />
 </Project>
